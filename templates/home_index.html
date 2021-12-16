@@ -1,5 +1,26 @@
 {% extends "master_header.html" %}
+{% load static %}
+
+{% block extrascripts %}
+<script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6197b5e05cae6979d73d5ab0" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="{% static 'login/js/webflow.js' %}" type="text/javascript"></script>
+{% endblock extrascripts %}
+
 
 {% block content %}
-<p>Home Page</p>
+
+<header id="hero" class="hero-3 wf-section">
+  <div class="flex-container-4 w-container">
+    <div>
+      <p class="heading-2">Welcome to the Strong Lensing Database</p>
+    </div>
+    <div class="hero-image-mask"><img src="{% static 'images/0HOME_Grid.png' %}" sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 341.09375px, 503.453125px" srcset="{% static 'images/0HOME_Grid.png' %} 500w, {% static 'images/0HOME_Grid.png' %} 800w, {% static 'images/0HOME_Grid.png' %} 1098w" alt="" class="hero-image-2"></div>
+  </div>
+  <div class="container-2 w-container">
+    <img src="{% static 'images/0HOME_EPFL.png' %}" loading="lazy" width="100" alt="" class="image-2">
+    <img src="{% static 'images/0HOME_ERC.png' %}" loading="lazy" width="75" alt="" class="image-3">
+    <img src="{% static 'images/0HOME_EU.png' %}" loading="lazy" height="65" alt="" class="image-4">
+  </div>
+</header>
+
 {% endblock %}

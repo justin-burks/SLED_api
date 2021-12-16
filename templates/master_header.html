@@ -6,19 +6,33 @@
     <meta charset="UTF-8">
     <title>Strong Gravitational Lens database</title>
 
-    <link rel="stylesheet" type="text/css" href="{% static 'lenses/css/style.css' %}"/>
+    <meta content="Master Header" property="og:title">
+    <meta content="Master Header" property="twitter:title">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="Webflow" name="generator">
+
+    <link href="{% static 'lenses/css/style.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/normalize.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/webflow.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/sled-8290ef.webflow.css' %}" rel="stylesheet" type="text/css">
 
     <!-- <script src="{% static 'lenses/js/sorttable.js' %}"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+    <script type="text/javascript">WebFont.load({  google: {    families: ["Basic:regular"]  }});</script>
+    <script src="https://use.typekit.net/pkl4bli.js" type="text/javascript"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
 
     {% block extrastyles %}
     {% endblock extrastyles %}
-    
+
+
     {% block extrascripts %}
     {% endblock extrascripts %}
   </head>
 
   <body>
-    
+
     <!-- Message div -->
     <div>
       {% if messages %}
@@ -44,10 +58,10 @@
 
 
     <!-- Top navigation bar -->
-    <div class="">
+    <!-- <div class="">
       <h1>
         <table>
-	  <tr>
+          <tr>
             {% with url_name=request.resolver_match.url_name %}
             {% with url_base=request.get_full_path %}
             <td class="{% if url_name in 'homepage,' %}selected{% endif %}"><a href="{% url 'home:homepage' %}">Home</a></td>
@@ -67,10 +81,36 @@
 	  </tr>
 	</table>
       </h1>
+    </div> -->
+
+    <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
+      <div class="w-container">
+        <a href="#" class="w-nav-brand"><img src="{% static 'images/0SLED_Logo.png' %}" loading="lazy" width="248" alt="" class="image-5"></a>
+        <nav role="navigation" class="nav-menu w-nav-menu">
+          {% with url_name=request.resolver_match.url_name %}
+          {% with url_base=request.get_full_path %}
+          <a href="{% url 'home:homepage' %}" class="navbar-copy w-nav-link">Home</a>
+          <a href="{% url 'lenses:lens-index' %}" class="navbar-copy w-nav-link">Lenses</a>
+          <a href="{% url 'groups:index' %}" class="navbar-copy w-nav-link">Groups</a>
+          {% if user.is_authenticated %}
+          <a href="{% url 'users:user-profile' %}" class="navbar-copy w-nav-link">{{ user.username }} </a>
+          <a href="{% url 'logout'%}" class="navbar-copy w-nav-link"><span class="text-span">Logout</span></a>
+          {% else %}
+          <a href="{% url 'login'%}" class="navbar-copy w-nav-link"><span class="text-span">Login</span></a>
+          {% endif %}
+          {% endwith %}
+          {% endwith %}
+        </nav>
+        <div class="w-nav-button">
+          <div class="w-icon-nav-menu"></div>
+        </div>
+      </div>
     </div>
-    
+    <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6197b5e05cae6979d73d5ab0" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/webflow.js' %}" type="text/javascript"></script>
+
     {% block content %}
     {% endblock %}
-    
+
   </body>
 </html>
