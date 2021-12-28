@@ -30,31 +30,31 @@
 
       {{ form.non_field_errors }}
       <div class="form-group">
-          <label for="{{ form.username.id_for_label }}">Username*:</label>
+          <label for="{{ form.username.id_for_label }}" class="field-label">Username*</label>
           {{ form.username }}
           {{ form.username.errors }}
       </div>
 
       <div class="form-group">
-          <label for="{{ form.email.id_for_label }}">Email*:</label>
+          <label for="{{ form.email.id_for_label }}" class="field-label">Email*</label>
           {{ form.email }}
           {{ form.email.errors }}
       </div>
 
       <div class="form-group">
-          <label for="{{ form.password1.id_for_label }}">Password*:</label>
+          <label for="{{ form.password1.id_for_label }}" class="field-label">Password*</label>
           {{ form.password1 }}
           {{ form.password1.errors }}
       </div>
 
       <div class="form-group">
-          <label for="{{ form.password2.id_for_label }}">Password confirmation*:</label>
+          <label for="{{ form.password2.id_for_label }}" class="field-label">Password confirmation*</label>
           {{ form.password2 }}
           {{ form.password2.errors }}
       </div>
 
       <div class="form-group">
-          <label for="{{ form.affiliation.id_for_label }}">Affiliation*:</label>
+          <label for="{{ form.affiliation.id_for_label }}" class="field-label">Affiliation*</label>
           {{ form.affiliation }}
           {{ form.affiliation.errors }}
       </div>

@@ -24,26 +24,26 @@
           <!--{{ form.as_p }} -->
           {{ form.non_field_errors }}
           <div class="form-group">
-              
-              <label for="{{ form.username.id_for_label }}">Username:</label>
+
+              <label for="{{ form.username.id_for_label }}" class="field-label">Username</label>
               {{ form.username }}
               {{ form.username.errors }}
 
           </div>
           <div class="form-group">
-             
-              <label for="{{ form.password.id_for_label }}">Password:</label>
+
+              <label for="{{ form.password.id_for_label }}" class="field-label-2">Password</label>
               {{ form.password }}
               {{ form.password.errors }}
           </div>
 
           <td><input type="submit" value="Login" data-wait="Please wait..." class="submit-button-2 w-button"></td>
         <p class="paragraph-2">New? Register <a href="{% url 'register' %}" class="link">here</a>.</p>
-      </form>             
+      </form>
 
 
       <!-- {{ form.username.label }}{{ form.username }} -->
-      <!-- {{ form.as_p }} 
+      <!-- {{ form.as_p }}
       <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form-2"><img src="{% static 'images/0SLED_Logo-Login.png' %}" loading="lazy" width="40" alt="" class="image-7">
         {% csrf_token %}
         <label for="name" class="field-label">Username</label>
