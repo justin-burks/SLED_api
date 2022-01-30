@@ -49,10 +49,11 @@ body {
   margin: 0;
   min-height: 100%;
   background-color: #fff;
-  font-family: Arial, sans-serif;
+  font-family: basic-sans, sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #333;
+  margin-left: 20px
 }
 img {
   max-width: 100%;
@@ -355,7 +356,7 @@ label {
 }
 .w-input:focus,
 .w-select:focus {
-  border-color: #3898EC;
+  border-color: #white;
   outline: 0;
 }
 .w-input[disabled],
@@ -895,9 +896,6 @@ textarea.w-select {
 .w-widget-twitter-count-shim.w--vertical.w--large {
   width: 76px;
 }
-.w-widget-gplus {
-  overflow: hidden;
-}
 .w-background-video {
   position: relative;
   overflow: hidden;
@@ -1125,7 +1123,7 @@ textarea.w-select {
   color: #222222;
 }
 .w-dropdown-link.w--current {
-  color: #0082f3;
+  color: #6F73DD;
 }
 .w-dropdown-link:focus {
   outline: 0;
@@ -1620,7 +1618,7 @@ textarea.w-select {
   margin-right: auto;
 }
 .w-nav-link.w--current {
-  color: #0082f3;
+  color: #6F73DD;
 }
 .w-nav-menu {
   position: relative;

@@ -12,16 +12,16 @@
 <input type="hidden" id="Urlgroups" data-url="{% url 'api:groups-view' %}" />
 
 {% csrf_token %}
-<div class="content container">
-    <p class="centred_name">{{group.name}}</p>
+
+<div class="w-container">
+    <h1 class="heading-2">{{group.name}}</h1>
+    <h1 class="heading-3"> Description: {{group.description}}</h1>
+    <h1 class="heading-3"> Owner: {{group.owner}}</h1>
 </div>
 
-<p> Description: {{group.description}}</p>
-<p> Owner: {{group.owner}}</p>
 
-
-<p class="centred_name">List of group members</p>
-<div class="content container">
+<div class="w-container">
+  <h1 class="heading-5">Group Members</h1>
     <table class="sortable">
         <tr>
             <th class="th-center">Name</th>
@@ -52,7 +52,7 @@
               event.preventDefault();
           }
           });
-          
+
           // Check all the checkboxes
           var checkboxes = document.querySelectorAll('.content input[type="checkbox"]');
           if( checkboxes.length > 0){
@@ -63,7 +63,7 @@
       });
     </script>
 
-    <div class="content">
+    <div class="w-container">
       <form id="ids-form" method="POST">
         {% csrf_token %}
         <span class="errorlist">{{ error_message }}</span>

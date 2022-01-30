@@ -1,28 +1,35 @@
 {% extends 'master_header.html' %}
 {% load static %}
 
+
+
 {% block content %}
 <!-- Modal div -->
-<div class="modal fade" id="id-modal" tabindex="-1" role="dialog">
+<!-- <div class="modal fade" id="id-modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
     </div>
   </div>
+</div> -->
+
+
+
+<div class="w-container">
+  <div class="w-row">
+    <div class="w-col w-col-9">
+      <h1 class="heading-2">User Profile</h1>
+    </div>
+    <div class="w-col w-col-3"><img src="{% static 'images/0Artboard-20.png' %}" loading="lazy" width="100" alt="" class="image-14"></div>
+  </div>
 </div>
 
 
-
-<div class="section">
-  <h1>User Profile page</h1>
-</div>
-
-
-<div class="section">
-  <h1>My details</h1>
-  <div class="content container">
+<div class="w-container">
+  <h1 class="heading-5">My Details</h1>
+  <div class="w-container">
     <table class="sortable">
       <tr>
-	<th class="th-center">Name</th>
+	<th class="th-center" "paragraph-3">Name</th>
 	<th class="th-center">Affiliation</th>
       </tr>
       <tr>
@@ -34,13 +41,13 @@
 </div>
 
 
-<div class="section">
-  <h1>My Groups</h1>
-  <div class="content container">
-    <table class="sortable">
+<div class="w-container">
+  <h1 class="heading-5">My Groups</h1>
+  <div class="w-container">
+    <table>
       <tr>
-	<th class="th-center">Name</th>
-	<th class="th-center">Description</th>
+        <th class="th-center">Name</th>
+        <th class="th-center">Description</th>
       </tr>
       {% for group in user.getGroupsIsMember %}
       <tr>
@@ -53,8 +60,8 @@
 </div>
 
 
-<div class="section">
-  <h1>Pending Tasks ({{ N_tasks }})</h1>
+<div class="w-container">
+  <h1 class="heading-5">Pending Tasks ({{ N_tasks }})</h1>
   <div>
     {% if N_tasks > 0 %}
     <table class="tasks sortable">
@@ -78,15 +85,15 @@
       </tbody>
     </table>
     {% else %}
-    <p>No pending confirmation tasks</p>
+    <p class="paragraph-3">No pending confirmation tasks</p>
     {% endif %}
-    <a href="{% url 'sled_tasks:tasks-list' %}">All tasks ({{ N_tasks_all }})</a>
+    <a href="{% url 'sled_tasks:tasks-list' %}" class="user-page-a">All tasks ({{ N_tasks_all }})</a>
   </div>
 </div>
 
 
-<div class="section">
-  <h1>New Notifications ({{ unread_notifications|length }})</h1>
+<div class="w-container">
+  <h1 class="heading-5">New Notifications ({{ unread_notifications|length }})</h1>
   <div>
     {% if unread_notifications %}
     <table class="notifications sortable">
@@ -110,15 +117,15 @@
       </tbody>
     </table>
     {% else %}
-    <p>No new notifications</p>
+    <p class="paragraph-3">No new notifications</p>
     {% endif %}
-    <a href="{% url 'sled_notifications:notifications-list' %}">All notifications({{ N_note_all }})</a>
+    <a href="{% url 'sled_notifications:notifications-list' %}" class="user-page-a">All notifications({{ N_note_all }})</a>
   </div>
 </div>
 
 
-<div class="section">
-  <h1>My Collections ({{ collections|length }}) </h1>
+<div class="w-container">
+  <h1 class="heading-5">My Collections ({{ collections|length }}) </h1>
   <div class="content ">
     {% if collections %}
     <table class="collections">
@@ -142,16 +149,16 @@
       </tbody>
     </table>
     {% else %}
-    <p>No collections to display</p>
+    <p class="paragraph-3">No collections to display</p>
     {% endif %}
-    <a href="{% url 'sled_collections:collections-list' %}">All collections</a>
+    <a href="{% url 'sled_collections:collections-list' %}" class="user-page-a">All collections</a>
   </div>
 </div>
 
 
-<div class="section">
-  <h1>My Lenses ({{ lenses|length }}) </h1>
-  <div class="content ">
+<div class="w-container">
+  <h1 class="heading-5">My Lenses ({{ lenses|length }}) </h1>
+  <div class="content">
     <form id="ids-form" method="POST">
       {% csrf_token %}
       {% include "lenses/lens_list_executive.html" with lenses=lenses %}
@@ -159,64 +166,73 @@
   </div>
 </div>
 
-
-<div class="controls">
+<div class="w-container">
+  <!-- <div class="controls"> -->
 
   <!-- Neutral buttons - they don't change the database -->
-  <button type="submit" class="update btn btn-sm btn-secondary" form="ids-form" formaction="{% url 'lenses:lens-update' %}">
+  <button type="submit" class="submit-button-4" form="ids-form" formaction="{% url 'lenses:lens-update' %}">
     <img src="{% static 'icons/pencil.svg' %}" alt="pencil">
     Update lenses
   </button>
-  <button type="button" class="process-lenses make-collection btn btn-sm btn-secondary" data-form-url="{% url 'lenses:lens-make-collection' %}">
+  <button type="button" class="submit-button-4" data-form-url="{% url 'lenses:lens-make-collection' %}">
     <img src="{% static 'icons/folder-fill.svg' %}" alt="collection">
     Make collection
   </button>
-  <button type="submit" class="collage btn btn-sm btn-secondary" form="ids-form" formaction="{% url 'lenses:lens-collage' %}">
+  <button type="submit" class="submit-button-4" form="ids-form" formaction="{% url 'lenses:lens-collage' %}">
     <img src="{% static 'icons/images.svg' %}" alt="image collage">
     Collage
   </button>
 
   <!-- Action buttons - performing some action without any danger of exposing sensitive information -->
-  <button type="button" class="process-lenses make-private btn btn-sm btn-primary" data-form-url="{% url 'lenses:lens-make-private' %}">
+  <button type="button" class="submit-button-4" data-form-url="{% url 'lenses:lens-make-private' %}">
     <img src="{% static 'icons/lock-fill.svg' %}" alt="lock">
     Make private
   </button>
-  <button type="button" class="process-lenses revoke-access btn btn-sm btn-primary" data-form-url="{% url 'lenses:lens-revoke-access' %}">
+  <button type="button" class="submit-button-4" data-form-url="{% url 'lenses:lens-revoke-access' %}">
     <img src="{% static 'icons/person-dash-fill.svg' %}" alt="person minus">
     Revoke access
   </button>
 
   <!-- Dangerous action buttons - revealing sensitive information if not used properly -->
-  <button type="button" class="process-lenses give-access btn btn-sm btn-danger" data-form-url="{% url 'lenses:lens-give-access' %}">
+  <button type="button" class="submit-button-4" data-form-url="{% url 'lenses:lens-give-access' %}">
     <img src="{% static 'icons/person-plus-fill.svg' %}" alt="person plus">
     Give access
   </button>
-  <button type="button" class="process-lenses make-public btn btn-sm btn-danger" data-form-url="{% url 'lenses:lens-make-public' %}">
+  <button type="button" class="submit-button-4" data-form-url="{% url 'lenses:lens-make-public' %}">
     <img src="{% static 'icons/people-fill.svg' %}" alt="people">
     Make public
   </button>
-  <button type="button" class="process-lenses cede-ownership btn btn-sm btn-danger" data-form-url="{% url 'lenses:lens-cede-ownership' %}">
+  <button type="button" class="submit-button-4" data-form-url="{% url 'lenses:lens-cede-ownership' %}">
     <img src="{% static 'icons/forward-fill.svg' %}" alt="arrow">
     Cede ownership
   </button>
-  <button type="button" class="process-lenses delete-lenses btn btn-sm btn-danger" data-form-url="{% url 'lenses:lens-delete' %}">
+  <button type="button" class="submit-button-4" data-form-url="{% url 'lenses:lens-delete' %}">
     <img src="{% static 'icons/trash.svg' %}" alt="trash">
     Delete lenses
   </button>
+  </div>
 </div>
+
 {% endblock content %}
 
 
 {% block extrastyles %}
 <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"> -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+<!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
 <style>
   .notifications td {margin:0px;padding:2px;}
   .tasks td {margin:0px;padding:2px;}
   .collections td {margin:0px;padding:2px;}
   .exe_summary td {margin:0px;padding:2px;}
 </style>
+
+<!-- <style>
+a {color: #6F73DD; text-decoration: none; hover: none;}
+a:hover {color: inherit;}
+.btn {font-family: basic-sans, sans-serif;}
+</style> -->
+
 {% endblock extrastyles %}
 
 
@@ -226,7 +242,7 @@
 <!-- <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script> -->
 <!-- <script src="{% static 'js/bootstrap.min.js' %}"></script> -->
 <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
 <script type="text/javascript" src="{% static 'lenses/js/autocomplete.js' %}"></script>
 <script type="text/javascript">
   $(document).ready(function() {

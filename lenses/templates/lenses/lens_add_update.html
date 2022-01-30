@@ -2,20 +2,22 @@
 {% load static %}
 {% block content %}
 
+{% block extrastyles %}
+<link rel="stylesheet" type="text/css" href="{% static 'lenses/css/lens_add.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'lenses/css/lens_visit_card.css' %}"/>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+{% endblock extrastyles %}
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script type="text/javascript" src="{% static 'lenses/js/jquery.formset.js' %}"></script>
 <script type="text/javascript" src="{% static 'lenses/js/lens_add.js' %}"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="{% static 'lenses/css/lens_add.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'lenses/css/lens_visit_card.css' %}"/>
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
+<div class="w-container">
 {% if request.resolver_match.url_name == 'lens-add' %}
-<h1>Add new lenses</h1>
+<h1 class="heading-9">Add New Lenses</h1>
 {% else %}
-<h1>Update lenses</h1>
+<h1 class="heading-9">Update Lenses</h1>
 {% endif %}
 
 <p>
@@ -23,17 +25,17 @@
 </p>
 
 <form id="formset" formset-prefix="{{ lens_formset.prefix }}" method="POST">
-  <div class="form-div">
+  <div class="w-container">
     {% csrf_token %}
     {{ lens_formset.management_form }}
     {{ lens_formset.non_form_errors }}
-    
+
     <table class="master">
       {% for form,existing in new_existing %}
-      
+
       <tr class="copy-target">
 	<td>
-	  
+
 	  <div class="lens-form">
 	    <table class="controls">
 	      <tr>
@@ -44,7 +46,7 @@
 
 	    {{ form.non_field_errors }}
 	    {{ form.id }}
-	    
+
 	    <table class="form-table">
 	      <tr>
 		<!-- First column -->
@@ -88,11 +90,11 @@
 		  </div>
 		</td>
 
-		
+
 	      </tr>
 	    </table>
 	  </div>
-	  
+
 	</td>
 	<td>
 
@@ -101,26 +103,26 @@
 	  {{ form.insert.label_tag }}
 	  {{ form.insert }}
 	  {% endif %}
-	  
+
 	</td>
 	<td>
-	  
+
 	  {% if existing %}
 	  {% for lens in existing %}
 	  {% include 'lenses/lens_visit_card.html' with lens=lens %}
 	  {% endfor %}
 	  {% endif %}
-	  
+
 	</td>
       </tr>
       {% endfor %}
     </table>
-    
+
   </div>
-  
-  
-  
-  <div class="button-div">
+
+
+
+  <div class="w-container">
     <table>
       <tr>
 	{% if request.resolver_match.url_name == 'lens-add' %}
@@ -129,11 +131,12 @@
 	<td><button type="submit">Create Lenses</button></td>
 	{% else %}
 	<td><button type="submit">Update</button></td>
-	{% endif %}	
+	{% endif %}
       </tr>
     </table>
   </div>
 </form>
+</div>
 
 <!-- <script type="text/javascript" src="{% static 'lenses/js/lens_add.js' %}"></script> -->
 

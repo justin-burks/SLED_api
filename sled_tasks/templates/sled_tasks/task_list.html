@@ -1,12 +1,12 @@
 {% extends 'master_header.html' %}
 {% block content %}
-<div class="content container">
-  <h1>My Tasks</h1>
-  
-  <div class="tasks_owned">
-    <p>
+<div class="w-container">
+  <h1 class="heading-2">My Tasks</h1>
+
+  <div class="w-container">
+    <h1 class="heading-3">
       Tasks initiated by me:
-    </p>
+    </h1>
     <table>
       <thead>
 	<tr>
@@ -35,11 +35,11 @@
     </table>
   </div>
 
-  
+
   <div class="tasks_recipient">
-    <p>
+    <h1 class="heading-3">
       Tasks addressed to me:
-    </p>
+    </h1>
     <table>
       <thead>
 	<tr>
@@ -51,7 +51,7 @@
 	  <th></th>
 	</tr>
       </thead>
-      <tbody>	
+      <tbody>
 	{% for task in recipient %}
 	<tr>
 	  <td>{{ task.task_type }}</td>
@@ -67,7 +67,6 @@
       </tbody>
     </table>
   </div>
-  
+
 </div>
 {% endblock content %}
-

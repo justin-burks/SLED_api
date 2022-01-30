@@ -137,58 +137,58 @@ body {
 }
 
 .image_titles {
-    position: absolute; 
-    left: 14%; 
+    position: absolute;
+    left: 14%;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .image_titles2 {
-    position: absolute; 
-    left: 24%; 
+    position: absolute;
+    left: 24%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .firstbox_title {
-    position: absolute; 
-    left: 48%; 
+    position: absolute;
+    left: 48%;
     font-weight: 300;
     font-size: 120%;
 }
 
 .image_titles3 {
-    position: absolute; 
+    position: absolute;
     left: 34%;
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .image_titles4 {
-    position: absolute; 
+    position: absolute;
     left: 45%;
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 .image_titles5 {
-    position: absolute; 
+    position: absolute;
     left: 55%;
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .image_titles6 {
-    position: absolute; 
+    position: absolute;
     left: 65%;
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .image_titles7 {
-    position: absolute; 
+    position: absolute;
     left: 75%;
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .image_titles8 {
-    position: absolute; 
+    position: absolute;
     left: 85%;
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 le
 
@@ -286,7 +286,7 @@ le
 table {
     width: 100%;
     table-layout: auto;
-    
+
 }
 
 .th-center, .th-center a {
@@ -336,10 +336,10 @@ table {
 }
 
 
-.td-center {
+/* .td-center {
     text-align: center;
     padding: 8px;
-    
+
 }
 
 .td-center1 {
@@ -387,7 +387,7 @@ nav ul li a:hover {
 	border-style: solid;
 	border-color: black;*/
 }
-
+/*
 .th {
     text-align: left;
     padding: 8px;
@@ -420,7 +420,7 @@ th {
 th2 {
     background-color: white;
     color: black;
-}
+} */ */
 
 img.one {
     height: 100%;
@@ -519,7 +519,7 @@ li ol, li ul {
 
 nav {
 	/*border-top: 2px solid #eee;
-	border-bottom: 2px solid #eee; 	 
+	border-bottom: 2px solid #eee;
 	height: 560px;
     	margin-top: 10px;
     	margin-right: 0px;
@@ -545,7 +545,7 @@ nav ul li a {
     color: #000;
     display: block;
     font-family: 'Exo 2',Arial,sans-serif;
-    /*font-size: 16px; 
+    /*font-size: 16px;
     letter-spacing: 0;
     margin-top:8px;
     font-weight: bold;
@@ -553,7 +553,7 @@ nav ul li a {
     text-decoration: none;
 }
 nav ul li.selected a,
-nav ul li.selected a:hover { 
+nav ul li.selected a:hover {
 	color: #fff;
 	background-color: #000;
 	font-weight:bold;

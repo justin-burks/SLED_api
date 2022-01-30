@@ -1,6 +1,4 @@
 h1, h2, h3, h4 {
-    font-family: 'Exo 2', Arial, sans-serif;
-    font-weight: 500;
 }
 
 h1{
@@ -14,7 +12,7 @@ h3 {
 .myImage {
   float: left;
   width: 10%;
-  font-family: Veranda;
+  font-family: basic-sans, sans-serif;
 }
 .heading {
   float:right;
@@ -55,36 +53,13 @@ h2 {
 
 
 body {
-    background: #EFEFEF;
-    margin: 5px !important;
-    padding: 0 !important;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-}
-
-.topmenu {
-    /*background-color: #25275D;*/
-    margin-top: 10px;
-    margin-right: 0px;
-    margin-left: 0px;
-    padding: 0px 0px 0px 0px;
-    background: #26275D;
-    /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(left top, #26275D, #0684A0);
-    /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom right, #26275D, #0684A0);
-    /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom right, #26275D, #0684A0);
-    /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to bottom right, #26275D, #0684A0);
-    /* Standard syntax */
-}
-
-.topmenu h1, .topmenu h1 a, .topmenu h1 a:visited, .topmenu h1 a:active {
-    /*color: #ffffff;*/
-    font-size: 15pt;
-    text-decoration: none;
-    padding: 0px 0px 0px 0px;
+  margin: 0;
+  min-height: 100%;
+  background-color: #fff;
+  font-family: basic-sans, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
 }
 
 .box{
@@ -137,58 +112,58 @@ body {
 }
 
 .image_titles {
-    position: absolute; 
-    left: 14%; 
+    position: absolute;
+    left: 14%;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .image_titles2 {
-    position: absolute; 
-    left: 24%; 
+    position: absolute;
+    left: 24%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .firstbox_title {
-    position: absolute; 
-    left: 48%; 
+    position: absolute;
+    left: 48%;
     font-weight: 300;
     font-size: 120%;
 }
 
 .image_titles3 {
-    position: absolute; 
+    position: absolute;
     left: 34%;
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .image_titles4 {
-    position: absolute; 
+    position: absolute;
     left: 45%;
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 .image_titles5 {
-    position: absolute; 
+    position: absolute;
     left: 55%;
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .image_titles6 {
-    position: absolute; 
+    position: absolute;
     left: 65%;
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .image_titles7 {
-    position: absolute; 
+    position: absolute;
     left: 75%;
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .image_titles8 {
-    position: absolute; 
+    position: absolute;
     left: 85%;
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 le
 
@@ -272,10 +247,11 @@ le
     /*margin-top: 0px;*/
     /*margin-bottom: 0px;*/
     margin-left: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
     float: right;
     font-size: 26pt;
     margin-right: 0px;
@@ -286,17 +262,15 @@ le
 table {
     width: 100%;
     table-layout: auto;
-    
+
 }
 
 .th-center, .th-center a {
-    text-align: center;
+    text-align: left;
     padding: 8px;
-    color: #EFEFEF;
-    /*font-style: light;*/
-    /*font-size: 120%;*/
-    font-weight: 300;
+    color: #ACACAC;
     margin-top: 0px;
+    font-weight: normal;
 }
 
 .table2 {
@@ -337,28 +311,23 @@ table {
 
 
 .td-center {
-    text-align: center;
+    text-align: left;
     padding: 8px;
-    
+
 }
 
 .td-center1 {
     text-align: center;
     padding: 8px;
-    color: #000;
-    background-color: #fff;
-    font-weight:bold;
 }
 
 .td-center1 a {
 	color: #000;
 	background-color: #fff;
-	font-weight:500;
 }
 
 
 .td-center1 a:hover {
-	color: #B998B5;
 	text-decoration: none;
 }
 
@@ -367,18 +336,15 @@ table {
     padding: 8px;
     color: #fff;
     background-color: #000;
-    font-weight:bold;
 }
 
 .td-center1selected a {
 	color: #fff;
 	background-color: #000;
-	font-weight:500;
 }
 
 
 nav ul li a:hover {
-	color: #B998B5;
 	text-decoration: none;
 }
 
@@ -391,9 +357,10 @@ nav ul li a:hover {
 .th {
     text-align: left;
     padding: 8px;
-    color: #EFEFEF;
-    font-weight: 300;
     width: auto !important;
+    color: #ACACAC;
+    border-bottom: 2px solid #ACACAC;
+    font-weight: normal !important;
 }
 
 
@@ -404,22 +371,34 @@ nav ul li a:hover {
 
 td {
     text-align: left;
-    padding: 40px;
 }
 
 
-tr:nth-child(even) {
-    background-color: #BDD4DE
+/* tr:nth-child(even) {
+    border-bottom: 2px solid #ACACAC;
+} */
+
+
+tr:first-child {
+    border-bottom: 2px solid #ACACAC;
+}
+
+table tr {
+  border-bottom: 2px solid #ACACAC;
+}
+
+table tr:last-child {
+  border: 0;
 }
 
 th {
-    background-color: #3F5765;
-    color: white;
+    border-bottom: 2px solid #ACACAC;
+    color: #ACACAC;
+    font-weight: normal !important;
 }
 
-th2 {
-    background-color: white;
-    color: black;
+.row {
+    border-bottom: 2px solid #ACACAC;
 }
 
 img.one {
@@ -469,16 +448,16 @@ img.cutout {
 
 button2
 {
-    padding:0;
+    padding:10px;
     background-color:transparent;
     text-decoration:underline;
     border:none;
     border:0;
-    color:#EFEFEF;
     cursor:pointer;
-    font-family:inherit;
+    font-family: basic-sans, sans-serif;
     font-size:inherit;
     font-weight: 300;
+    font-family: basic-sans, sans-serif;
 }
 
 button2::-moz-focus-inner
@@ -493,6 +472,9 @@ button2::-moz-focus-inner
 
 tr {
     font-size:15px;
+    font-family: basic-sans, sans-serif;
+    text-align: left;
+    border-bottom: 2px solid #ACACAC;
 }
 /*
 th {
@@ -519,7 +501,7 @@ li ol, li ul {
 
 nav {
 	/*border-top: 2px solid #eee;
-	border-bottom: 2px solid #eee; 	 
+	border-bottom: 2px solid #eee;
 	height: 560px;
     	margin-top: 10px;
     	margin-right: 0px;
@@ -545,7 +527,7 @@ nav ul li a {
     color: #000;
     display: block;
     font-family: 'Exo 2',Arial,sans-serif;
-    /*font-size: 16px; 
+    /*font-size: 16px;
     letter-spacing: 0;
     margin-top:8px;
     font-weight: bold;
@@ -553,7 +535,7 @@ nav ul li a {
     text-decoration: none;
 }
 nav ul li.selected a,
-nav ul li.selected a:hover { 
+nav ul li.selected a:hover {
 	color: #fff;
 	background-color: #000;
 	font-weight:bold;
@@ -578,4 +560,3 @@ nav ul li a:hover {
 .visit-card table td {padding:2px;}
 .visit-card .properties {width:300px;}
 .visit-card .img-container {width:204px;height:204px;border:1px solid #777777;padding: 5px}
-

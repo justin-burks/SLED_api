@@ -1,16 +1,6 @@
 {% extends 'master_header.html' %}
 {% load static %}
 
-
-{% block extrastyles %}
-<style>
-.div-block-4:hover {border:2px solid #6F73DE}
-.div-block-5:hover {border:2px solid #6F73DE}
-a {text-decoration: none;}
-a { color: inherit; }
-</style>
-{% endblock extrastyles %}
-
 {% block content %}
 
 
@@ -25,12 +15,14 @@ a { color: inherit; }
   </div>
 </div>
 <div class="div-block-3">
-  <div class="div-block-4"><a href="{% url 'groups:group-list' %}"><img src="{% static 'images/0Lenses_Browse.png' %}" loading="lazy" width="100" height="100" alt="" class="image-12">
+  <a href="{% url 'groups:group-list' %}" class='div-block-4'>
+    <img src="{% static 'images/0Lenses_Browse.png' %}" loading="lazy" width="100" height="100" alt="" class="image-12">
     <h1 class="heading-7">Browse my groups</h1>
-  </div>
-  <div class="div-block-5"><a href="{% url 'groups:group-add' %}"><img src="{% static 'images/0Lenses_Add-New.png' %}" loading="lazy" width="100" height="100" alt="" class="image-13">
+  </a>
+  <a href="{% url 'groups:group-add' %}" class='div-block-4'>
+    <img src="{% static 'images/0Lenses_Add-New.png' %}" loading="lazy" width="100" height="100" alt="" class="image-13">
     <h1 class="heading-7">Add new groups</h1>
-  </div>
+  </a>
 </div>
 
 
